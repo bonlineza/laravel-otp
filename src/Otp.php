@@ -4,25 +4,16 @@ namespace Ichtrojan\Otp;
 
 use Carbon\Carbon;
 use Ichtrojan\Otp\Models\Otp as Model;
-use Illuminate\Support\Facades\Facade;
 
-class Otp extends Facade
+class Otp
 {
-    /**
-     * @return string
-     */
-    protected static function getFacadeAccessor()
-    {
-        return 'Otp';
-    }
-
     /**
      * @param string $identifier
      * @param int $digits
      * @param int $validity
      * @return mixed
      */
-    public function generate(string $identifier, int $digits = 4, int $validity = 10) : object
+    public function generate(string $identifier, int $digits = 4, int $validity = 10): object
     {
         Model::where('identifier', $identifier)->where('valid', true)->delete();
 
@@ -52,7 +43,7 @@ class Otp extends Facade
      * @param string $token
      * @return mixed
      */
-    public function validate(string $identifier, string $token) : object
+    public function validate(string $identifier, string $token): object
     {
         $otp = Model::where('identifier', $identifier)->where('token', $token)->first();
 

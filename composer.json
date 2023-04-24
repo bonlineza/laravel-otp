@@ -20,7 +20,7 @@
         "Ichtrojan\\Otp\\OtpServiceProvider"
       ],
       "aliases": {
-        "Otp": "Ichtrojan\\Otp\\Otp"
+        "Otp": "Ichtrojan\\Otp\\Facades\\Otp"
       }
     }
   },
