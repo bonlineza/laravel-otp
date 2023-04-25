@@ -24,6 +24,8 @@
       }
     }
   },
-  "require": {},
+  "require": {
+    "laravel/framework": "~9.0"
+  },
   "description": "A simple package to generate and validate OTPs"
 }
